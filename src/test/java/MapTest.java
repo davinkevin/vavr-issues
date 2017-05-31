@@ -1,8 +1,8 @@
+import io.vavr.API;
 import io.vavr.Tuple2;
 import io.vavr.collection.Map;
 import org.junit.Test;
 
-import static io.vavr.API.Map;
 import static io.vavr.API.Tuple;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,7 +20,7 @@ public class MapTest {
         Tuple2<Integer, String> t4 = Tuple(4, "foo");
 
         /* WHEN  */
-        Map<Integer, String> map = Map(t1, t2, t3, t4);
+        Map<Integer, String> map = API.<Integer, String>Map(t1, t2, t3, t4);
 
         /* THEN  */
         assertThat(map).hasSize(4);
